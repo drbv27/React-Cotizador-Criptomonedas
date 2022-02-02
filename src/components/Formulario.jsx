@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import useSelectMonedas from "../hooks/useSelectMonedas";
+import { monedas } from "../data/monedas";
 
 const InputSubmit = styled.input`
   background-color: #9497ff;
@@ -20,13 +21,12 @@ const InputSubmit = styled.input`
 `;
 
 const Formulario = () => {
-  const [SelectMonedas] = useSelectMonedas("Elige tu Moneda");
-  const [SelectCriptoMonedas] = useSelectMonedas("Elige tu CriptoMoneda");
+  const [SelectMonedas] = useSelectMonedas("Elige tu Moneda", monedas);
 
   return (
     <form>
       <SelectMonedas />
-      <SelectCriptoMonedas />
+
       <InputSubmit type="submit" value="Cotizar" />
     </form>
   );
